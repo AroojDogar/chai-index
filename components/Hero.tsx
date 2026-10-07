@@ -5,7 +5,7 @@ import { ITEMS } from "@/lib/items";
 import { fmtMinutes, fmtMoney, minutesOfWork, toUSD } from "@/lib/calc";
 import type { Country, ItemKey, Rates } from "@/lib/types";
 import CountryPicker from "./CountryPicker";
-import Kulhad from "./Kulhad";
+import HeroScene from "./HeroScene";
 import Odometer from "./Odometer";
 import ItemIcon from "./ItemIcon";
 
@@ -82,7 +82,7 @@ export default function Hero({ home, onHome, item, onItem, rates }: Props) {
       </div>
 
       <div className="relative">
-        <Kulhad pourKey={`${home.code}-${item}`} tag={fmtMoney(price, home.symbol)} sub={`${local} · ${home.city}`} />
+        <HeroScene item={item} sceneKey={`${home.code}-${item}`} tag={fmtMoney(price, home.symbol)} sub={`${local} · ${home.city}`} />
       </div>
     </section>
   );
